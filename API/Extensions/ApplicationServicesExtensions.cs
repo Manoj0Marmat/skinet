@@ -1,3 +1,4 @@
+using System.Drawing;
 using API.Errors;
 using Core.Interfaces;
 using Infrastructure.Data;
@@ -35,6 +36,13 @@ public static class AddApplicationServicesExtensions{
 
             };
         });
+        services.AddCors(opt =>{
+            opt.AddPolicy("CorsPolicy", policy =>{
+                policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:5001");
+            });
+        });
+
+
 
         return services;
 
