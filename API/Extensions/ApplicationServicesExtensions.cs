@@ -38,12 +38,18 @@ public static class AddApplicationServicesExtensions{
         });
         services.AddCors(opt =>{
             opt.AddPolicy("CorsPolicy", policy =>{
-                policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:5001");
+                policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:5001");
+            });
+
+            opt.AddPolicy(
+            name: "AllowOrigin",
+            builder =>{
+                builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
             });
         });
-
-
-
+        
         return services;
 
     }
