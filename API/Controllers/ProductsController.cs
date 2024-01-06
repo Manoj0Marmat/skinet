@@ -9,7 +9,7 @@ using API.Helper;
 
 namespace API.Controllers
 {
-    public class ProductsController : BaseApiController 
+    public class ProductsController : BaseApiController
     {
         private readonly IGenericRepository<Product> _productsRepo;
         private readonly IGenericRepository<ProductBrand> _productBrandRepo;
